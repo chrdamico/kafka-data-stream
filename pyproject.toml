@@ -1,0 +1,37 @@
+[project]
+name = "kafka-data-stream"
+version = "0.0.0"
+description = "Simple Kafka data stream application"
+readme = "README.md"
+requires-python = ">=3.11, <3.12"
+dependencies = [
+    "APScheduler==3.10.4",
+    "confluent-kafka==2.5.0",
+    "minio==7.2.7",
+    "numpy==2.0.0",
+    "pydantic==2.8.2",
+    "pydantic-settings==2.3.4",
+    "click==8.1.7",
+    "pillow==10.4.0",
+    "SQLAlchemy==2.0.31",
+    "psycopg==3.2.1",
+    "msgpack==1.0.8"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.2.2",
+]
+
+[project.scripts]
+manage = "manage:cli"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+line-length = 120
+ignore = ["E501"]
